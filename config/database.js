@@ -1,12 +1,16 @@
 'use strict'
 const mysql = require('mysql')
 
-module.exports = conn.createConnection({
+const conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'riset-login-express'
-}).connect(err=>{
+})
+
+conn.connect(err=>{
   if(err) throw err
   console.log("Database aman")
 })
+
+module.exports = conn
